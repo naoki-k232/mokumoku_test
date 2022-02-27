@@ -17,7 +17,7 @@
                         href="{{ route('category.index') }}">{{ 'カテゴリ一覧' }}</a>
                 </li>
                 <li class="nav-item">
-                    {{-- <a class="nav-link active" href="{{ route('event.register') }}">{{ '開催する' }}</a> --}}
+                    <a class="nav-link active" href="{{ route('event.register') }}">{{ '開催する' }}</a>
                 </li>
             </ul>
         </div>
