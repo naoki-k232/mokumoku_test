@@ -23,5 +23,8 @@ Route::get('/event/{id}', [EventController::class, 'show'])->name('event.show');
 // もくもく会編集画面
 Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('event.edit');
 
+// もくもく会更新処理
+Route::post('/event/update', [EventController::class, 'update'])->name('event.update');
+
 // カテゴリー一覧画面
 Route::get('/category/index', [CategoryController::class, 'index'])->name('category.index');

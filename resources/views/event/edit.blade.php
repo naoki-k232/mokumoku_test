@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('event.create') }}" method="POST">
+        <form action="{{ route('event.update') }}" method="POST">
             @csrf
+            <input type="hidden" name="event_id" value="{{ $event->event_id }}">
             {{-- タイトルフォーム --}}
             <div class="form-group">
                 <label for="title">{{ 'タイトル' }}<span class="badge bg-danger ml-2">{{ '必須' }}</span></label>
