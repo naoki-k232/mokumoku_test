@@ -95,4 +95,32 @@ class Event extends Model
     {
         return $this->destroy($id);
     }
+
+    /**
+     * 部分検索機能
+     *
+     * @param string $word 入力した検索ワード
+     */
+    public function searchWord($word)
+    {
+        return $this
+            ->where('title', 'like', '%' . $word . '%')
+            ->orWhere('date', 'like', '%' . $word . '%')
+            ->orWhere('start_time', 'like', '%' . $word . '%')
+            ->orWhere('end_time', 'like', '%' . $word . '%')
+            ->orWhere('content', 'like', '%' . $word . '%')
+            ->orWhere('entry_fee', 'like', '%' . $word . '%')
+            ->get();
+        // 一致検索
+        // where('title', 'Laravel')
+
+        // 部分一致検索
+        // where('title', 'like', '%'.$word.'%')
+
+        // or検索
+        // where()
+        // ->orWhere()
+        // ->orWhere()
+
+    }
 }

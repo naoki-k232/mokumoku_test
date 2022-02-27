@@ -20,6 +20,12 @@
                     <a class="nav-link active" href="{{ route('event.register') }}">{{ '開催する' }}</a>
                 </li>
             </ul>
+            {{-- 検索フォーム --}}
+            <form class="form-inline" id="search-form" method="GET" action="{{ route('event.index') }}">
+                <input class="form-control mr-sm-2" id="search-input" type="search" name="search" placeholder="キーワードを入力"
+                    {{-- $wordの値がセットされていれば、$wordの値を、セットされていなければ値は空を返します。 --}} value="{{ isset($word) ? $word : '' }}">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+            </form>
         </div>
     </div>
 </nav>
