@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Event extends Model
 {
@@ -24,9 +25,17 @@ class Event extends Model
         'content',
         'entry_fee',
     ];
+
+    /**
+     * カテゴリーリレーション
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'category_id');
+    }
     /**
      * eventsテーブルのレコードを全件取得
-     * 
+     *
      * @param void
      * @return Event eventsテーブル
      */
