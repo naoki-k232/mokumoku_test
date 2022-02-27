@@ -98,4 +98,18 @@ class EventController extends Controller
             'end_time',
         ));
     }
+
+    /**
+     * 編集画面
+     */
+    public function edit(Request $request, $id)
+    {
+        // カテゴリー一覧を取得
+        $categories = $this->category->allCategoriesData();
+
+        // IDをもとに編集画面に表示するもくもく会のデータを1件取得
+        $event = $this->event->findEventByEventId($id);
+
+        return view('event.edit', compact('categories', 'event'));
+    }
 }
