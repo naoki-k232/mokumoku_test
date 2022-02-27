@@ -53,7 +53,10 @@
                             class="btn btn-primary mr-3">{{ '詳細' }}</a>
                         <a href="{{ route('event.edit', ['id' => $event->event_id]) }}"
                             class="btn btn-info mr-3">{{ '編集' }}</a>
-                        <button class="btn btn-danger mr-3">{{ '削除' }}</button>
+                        <form action="{{ route('event.delete', ['id' => $event->event_id]) }}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger mr-3">{{ '削除' }}</button>
+                        </form>
                     </div>
                 </div>
             </div>
