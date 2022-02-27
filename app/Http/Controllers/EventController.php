@@ -60,4 +60,15 @@ class EventController extends Controller
 
         return redirect()->route('event.index')->with('success', 'もくもく会の登録に成功しました。');
     }
+
+    /**
+     * 詳細画面
+     */
+    public function show($id)
+    {
+        // $id(event_id)をもとに、eventsテーブルの特定のレコードに絞り込む
+        $event = $this->event->findEventByEventId($id);
+
+        return view('event.show', compact('event'));
+    }
 }

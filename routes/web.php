@@ -17,5 +17,8 @@ Route::get('/event/register', [EventController::class, 'register'])->name('event
 // もくもく会登録処理
 Route::post('/event/create', [EventController::class, 'create'])->name('event.create');
 
+// もくもく会詳細画面
+Route::get('/event/{id}', [EventController::class, 'show'])->name('event.show');
+
 // カテゴリー一覧画面
 Route::get('/category/index', [CategoryController::class, 'index'])->name('category.index');

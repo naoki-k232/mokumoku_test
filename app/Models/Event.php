@@ -60,4 +60,15 @@ class Event extends Model
             'entry_fee' => $request->entry_fee,
         ]);
     }
+
+    /**
+     * idをもとにeventsテーブルから特定のレコードに絞り込む
+     *
+     * @param int $id イベントID
+     * @return Event
+     */
+    public function findEventByEventId($id)
+    {
+        return $this->find($id);
+    }
 }
