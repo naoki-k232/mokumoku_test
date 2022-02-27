@@ -43,4 +43,21 @@ class Event extends Model
     {
         return $this->get();
     }
+
+    /**
+     * 登録処理 eventsテーブルにデータをinsert
+     *
+     */
+    public function insertEventData($request)
+    {
+        return $this->create([
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'date' => $request->date,
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time,
+            'content' => $request->content,
+            'entry_fee' => $request->entry_fee,
+        ]);
+    }
 }

@@ -1,3 +1,16 @@
+{{-- フラッシュメッセージ --}}
+{{-- 成功した時 --}}
+@if (session('success'))
+    <div class="alert alert-success text-center" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
+{{-- 失敗した時 --}}
+@if (session('error'))
+    <div class="alert alert-danger text-center" role="alert">
+        {{ session('error') }}
+    </div>
+@endif
 @extends('layouts.app')
 
 @section('content')

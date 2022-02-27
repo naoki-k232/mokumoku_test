@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="" method="">
+        <form action="{{ route('event.create') }}" method="POST">
             @csrf
             {{-- タイトルフォーム --}}
             <div class="form-group">
